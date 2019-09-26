@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="Struts2HttpSession" extends="struts-default">
+		
+		<action name="login" class="job.portal.action.LoginAction" method="execute">
+			<result name="SUCCESS" >/profile.jsp</result>
+			<result name="ERROR">/login.jsp</result>
+			<result name="SUCCESSADMIN" >/admin.jsp</result>
+		</action>
+		
+		<action name="register" class="job.portal.action.RegistrationAction" method="execute">
+			<result name="CONFIRM">/confirmation.jsp</result>
+			<result name="REGISTER">/registration.jsp</result>
+		</action>
+		
+		<action name="confirmUser" class="job.portal.action.ConfirmationAction" method="execute">
+			<result name="CONFIRM">/thankYou.jsp</result>
+		</action>
+		 
+		<action name="forgetPassword" class="job.portal.action.ForgetPasswordAction">
+			<result name="ERROR">/forgetPassword.jsp</result>
+			<result name="SUCCESS">/codePassword.jsp</result>
+		</action>
+		
+		<action name="codePassword" class="job.portal.action.ForgetPasswordAction" method="checkCode">
+			<result name="ERRORCODE">/codePassword.jsp</result>
+			<result name="SUCCESSCODE">/setPassword.jsp</result>
+		</action>
+		
+		<action name="setPassword" class="job.portal.action.ForgetPasswordAction" method="setPassword">
+			<result name="ERRORSET">/setPassword.jsp</result>
+			<result name="SUCCESSSET">/thankYouPassword.jsp</result>
+		</action>
+		
+		<action name="education" class="job.portal.action.EduAction">
+			<result name="FETCHEDU">/education.jsp</result>
+		</action>
+		
+		<action name="addEdu" class="job.portal.action.EduAction" method="addEdu">
+			<result name="ADDEDU">/education.jsp</result>
+		</action>
+		
+		<action name="deleteEdu" class="job.portal.action.EduAction" method="deleteEdu">
+			<result name="DELETEEDU">/education.jsp</result>
+		</action>
+		
+		<action name="updateEdu" class="job.portal.action.EduAction" method="updateEdu">
+			<result name="UPDATEEDU">/education.jsp</result>
+			<result name="ERROREDU">/editEdu.jsp</result>
+		</action>
+		
+		<action name="experience" class="job.portal.action.ExpAction">
+			<result name="FETCHEXP">/experience.jsp</result>
+		</action> 
+		
+		<action name="addExp" class="job.portal.action.ExpAction" method="addExp">
+			<result name="ADDEXP">/experience.jsp</result>
+		</action>
+		
+		<action name="deleteExp" class="job.portal.action.ExpAction" method="deleteExp">
+			<result name="DELETEEXP">/experience.jsp</result>
+		</action>
+		
+		<action name="updateExp" class="job.portal.action.ExpAction" method="updateExp">
+			<result name="UPDATEEXP">/experience.jsp</result>
+			<result name="ERROREXP">/editExp.jsp</result>
+		</action>
+		
+		<action name="particulars" class="job.portal.action.ParticularsAction">
+			<result name="FETCHPARTICULARS">/particulars.jsp</result>
+		</action>
+		
+		<action name="loadParticulars" class="job.portal.action.ParticularsAction" method="loadParticulars">
+			<result name="LOADPARTICULARS">/editParticulars.jsp</result>
+		</action>
+		
+		<action name="updateParticulars" class="job.portal.action.ParticularsAction" method="updateParticulars">
+			<result name="UPDATEPARTICULARS">/particulars.jsp</result>
+			<result name="ERRORPARTICULARS">/editParticulars.jsp</result>
+		</action>
+		
+		<action name="search" class="job.portal.action.SearchAction">
+			<result name="SEARCH">/search.jsp</result>
+		</action>
+		
+		<action name="profile" class="job.portal.action.ProfileAction">
+			<result name="FETCHPROFILE">/profile.jsp</result>
+		</action>
+		
+		<action name="addPost" class="job.portal.action.ProfileAction" method="addPost">
+			<result name="ADDPOST">/profile.jsp</result>
+		</action>
+		
+		<action name="updatePost" class="job.portal.action.ProfileAction" method="updatePost">
+			<result name="UPDATEPOST">/profile.jsp</result>
+			<result name="ERRORPOST">/editProfile.jsp</result>
+		</action> 
+		
+		<action name="deletePost" class="job.portal.action.ProfileAction" method="deletePost">
+			<result name="DELETEPOST">/profile.jsp</result>
+		</action>
+		
+		<action name="deleteFriends" class="job.portal.action.ProfileAction" method="deleteFriends">
+			<result name="DELETEFRIENDS">/profile.jsp</result>
+		</action>
+		
+		<action name="addFriends" class="job.portal.action.SearchAction" method="addFriends">
+			<result name="ADDFREINDS">/search.jsp</result>
+		</action>
+		
+		<action name="deleteUser" class="job.portal.action.AdminAction">
+			<result name="DELETEUSER">/admin.jsp</result>
+		</action>
+		
+		<action name="sendBulkEmail" class="job.portal.action.AdminAction" method="sendBulkEmail">
+			<result name="SENDBULKEMAIL">/admin.jsp</result>
+		</action>
+	</package>
+</struts>  
